@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "858956749287",
+    "project_id": "ecomtest-e42e2",
+    "storage_bucket": "ecomtest-e42e2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:858956749287:android:e66b5be7f7764a96390542",
+        "android_client_info": {
+          "package_name": "com.example"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBmthoqiWvgBzIrUeGpMQdc3MY7JESTYO8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
