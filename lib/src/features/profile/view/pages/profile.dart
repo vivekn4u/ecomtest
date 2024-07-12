@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 class ProfileScreenPage extends StatelessWidget {
   const ProfileScreenPage({super.key, required this.providers});
 
-  static const route = '/profile';
+  static const route = 'profile';
 
   final List<AuthProvider>? providers;
 

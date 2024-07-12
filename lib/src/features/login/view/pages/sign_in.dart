@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 class SignInScreenPage extends StatelessWidget {
   const SignInScreenPage({super.key, required this.providers});
 
-  static const route = '/sign-in';
+  static const route = 'sign-in';
 
   final List<AuthProvider>? providers;
 

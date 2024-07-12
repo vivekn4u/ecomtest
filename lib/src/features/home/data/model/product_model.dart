@@ -1,5 +1,7 @@
+import 'dart:collection';
 import 'dart:convert';
 
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:ecomtest/src/features/home/data/model/category_model.dart';
 import 'package:ecomtest/src/features/home/service/entity/category_entity.dart';
 import 'package:ecomtest/src/features/home/service/entity/product_entity.dart';
@@ -26,14 +28,22 @@ class ProductModel extends ProductEntity {
 
     final category = CategoryModel.fromJson(json['category']);
 
-    final images = json['image'];
+    final List<dynamic> images = json['images'];
+    List<String> imageList = [];
+    for (var value in images) {
+      imageList.add(value
+          .toString()
+          .replaceAll("[", "")
+          .replaceAll("]", "")
+          .replaceAll("\"", ""));
+    }
 
     return ProductModel(
         id: json['id'],
         title: json['title'],
         price: json['price'].toDouble(),
         description: json['description'],
-        image: images,
+        image: imageList,
         creationAt: cd,
         updatedAt: ud,
         category: category);
@@ -50,6 +60,10 @@ class ProductModel extends ProductEntity {
       'updatedAt': updatedAt!.toIso8601String(),
       'category': category.toString(),
     };
+  }
+
+  factory ProductModel.fromFirebase(DocumentSnapshot snapshot) {
+    return ProductModel.fromJson(snapshot.data() as Map<String, dynamic>);
   }
 
   @override

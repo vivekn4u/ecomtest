@@ -16,6 +16,11 @@ class ServerFailure extends Failures {
   const ServerFailure({String? message}) : super(message: message ?? '');
 }
 
+/// this class is used to show user login Failures
+class LoginFailure extends Failures {
+  const LoginFailure({String? message}) : super(message: message ?? '');
+}
+
 /// this class is used to show cache failures
 class CacheFailure extends Failures {
   const CacheFailure({String? message}) : super(message: message ?? '');
