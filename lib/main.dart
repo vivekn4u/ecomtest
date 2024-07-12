@@ -1,10 +1,11 @@
 import 'package:ecomtest/firebase_options.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import 'src/app.dart';
-import 'src/core/settings/settings_controller.dart';
-import 'src/core/settings/settings_service.dart';
+import 'src/core/common/settings/settings_controller.dart';
+import 'src/core/common/settings/settings_service.dart';
 
 void main() async {
   //Initialize widget binding
@@ -26,5 +27,5 @@ void main() async {
   // Run the app and pass in the SettingsController. The app listens to the
   // SettingsController for changes, then passes it further down to the
   // SettingsView.
-  runApp(MyApp(settingsController: settingsController));
+  runApp(ProviderScope(child: MyApp(settingsController: settingsController)));
 }
